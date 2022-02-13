@@ -14,16 +14,16 @@
 # limitations under the License.
 
 # inherit from common msm8226
-include device/samsung/msm8226-common/BoardConfigCommon.mk
+include device/lenovo/msm8226-common/BoardConfigCommon.mk
 
-COMMON_PATH := device/samsung/s3ve3g-common
+COMMON_PATH := device/lenovo/b8080f-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
-BUILD_FINGERPRINT := samsung/s3ve3gxx/s3ve3g:4.4.2/KOT49H/I9301IXXUANL1:user/release-keys
+BUILD_FINGERPRINT := lenovo/b8080f/b8080f:4.4.2/KOT49H/B8080FXXUANL1:user/release-keys
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv,s3ve3gxx
+TARGET_OTA_ASSERT_DEVICE := b8080f
 
 # Audio
 USE_CUSTOM_AUDIO_POLICY := 1
@@ -55,9 +55,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
 BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := hardware/lenovo/mkbootimg.mk
 BOARD_RAMDISK_USE_XZ := true
-TARGET_KERNEL_SOURCE := kernel/samsung/msm8226
+TARGET_KERNEL_SOURCE := kernel/lenovo/msm8226
 
 # Legacy BLOB Support
 TARGET_LD_SHIM_LIBS += \
@@ -100,4 +100,4 @@ include $(COMMON_PATH)/sepolicy/sepolicy.mk
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # inherit from the proprietary version
-include vendor/samsung/s3ve3g-common/BoardConfigVendor.mk
+include vendor/lenovo/b8080f-common/BoardConfigVendor.mk

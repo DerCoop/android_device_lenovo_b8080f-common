@@ -16,4 +16,4 @@
 
 # Board specific SELinux policy variable definitions
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    device/samsung/s3ve3g-common/sepolicy/common
+    device/lenovo/b8080f-common/sepolicy/common

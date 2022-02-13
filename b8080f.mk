@@ -20,8 +20,8 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 1280
-TARGET_SCREEN_WIDTH := 720   
+TARGET_SCREEN_HEIGHT := 1080
+TARGET_SCREEN_WIDTH := 1920
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -58,7 +58,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.samsung
+    android.hardware.light@2.0-service.lenovo
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -106,7 +106,7 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/samsung/s3ve3g-common/s3ve3g-common-vendor.mk)
+$(call inherit-product, vendor/lenovo/b8080f-common/b8080f-common-vendor.mk)
 
 # common msm8226
-$(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
+$(call inherit-product, device/lenovo/msm8226-common/msm8226.mk)

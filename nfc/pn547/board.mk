@@ -15,7 +15,7 @@
 #
 
 # NFC
-include device/samsung/s3ve3g-common/nfc/board.mk
+include device/lenovo/b8080f-common/nfc/board.mk
 
 # PN547 specific flags
 BOARD_NFC_CHIPSET := pn547

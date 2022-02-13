@@ -1,5 +1,9 @@
 Copyright 2014 - The CyanogenMod Project
 
-Common device configuration for Samsung Galaxy S III Neo.
+Common device configuration for Lenovo Yoga Tablet 10 HD+ (Wi-Fi only).
 
 WORK IN PROGRESS. WILL EAT YOUR CAT.
+
+# copied from
+
+this repo is copied from https://github.com/LineageOS/android_device_samsung_s3ve3g-common

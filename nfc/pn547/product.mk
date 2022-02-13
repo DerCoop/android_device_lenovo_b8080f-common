@@ -15,12 +15,12 @@
 #
 
 # NFC
-$(call inherit-product, device/samsung/s3ve3g-common/nfc/product.mk)
+$(call inherit-product, device/lenovo/b8080f-common/nfc/product.mk)
 
 PRODUCT_PACKAGES += \
     libpn547_fw \
     nfc_nci.pn54x.default
 
 PRODUCT_COPY_FILES += \
-    device/samsung/s3ve3g-common/nfc/pn547/libnfc-nci.conf:system/etc/libnfc-nci.conf \
-    device/samsung/s3ve3g-common/nfc/pn547/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
+    device/lenovo/b8080f-common/nfc/pn547/libnfc-nci.conf:system/etc/libnfc-nci.conf \
+    device/lenovo/b8080f-common/nfc/pn547/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
