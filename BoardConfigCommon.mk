@@ -48,16 +48,30 @@ BOARD_HAVE_QCOM_FM := true
 TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Kernel
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := console=null androidboot.hardware=qcom user_debug=23 msm_rtb.filter=0x37 zcache.enabled=1 zcache.compressor=lz4
-BOARD_KERNEL_IMAGE_NAME := zImage
-BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_BASE         := 0x00000000
+BOARD_KERNEL_CMDLINE      := console=ttyHSL0,115200,n8 \
+                             androidboot.console=ttyHSL0 \
+                             androidboot.hardware=qcom \
+                             user_debug=31 \
+                             msm_rtb.filter=0x37
+#BOARD_KERNEL_CMDLINE      := console=null \
+#                             androidboot.hardware=qcom \
+#                             user_debug=23 \
+#                             msm_rtb.filter=0x37 \
+#                             zcache.enabled=1 \
+#                             zcache.compressor=lz4
+BOARD_KERNEL_IMAGE_NAME   := zImage
+BOARD_KERNEL_PAGESIZE     := 2048
 BOARD_KERNEL_SEPARATED_DT := true
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --tags_offset 0x1e00000
-BOARD_CUSTOM_BOOTIMG := true
-BOARD_CUSTOM_BOOTIMG_MK := hardware/lenovo/mkbootimg.mk
-BOARD_RAMDISK_USE_XZ := true
-TARGET_KERNEL_SOURCE := kernel/lenovo/msm8226
+BOARD_MKBOOTIMG_ARGS      := --kernel_offset 0x00008000 \
+                             --ramdisk_offset 0x01000000 \
+                             --tags_offset 0x00000100
+#BOARD_MKBOOTIMG_ARGS      := --ramdisk_offset 0x02000000 \
+#                             --tags_offset 0x1e00000
+BOARD_CUSTOM_BOOTIMG      := true
+BOARD_CUSTOM_BOOTIMG_MK   := hardware/lenovo/mkbootimg.mk
+BOARD_RAMDISK_USE_XZ      := true
+TARGET_KERNEL_SOURCE      := kernel/lenovo/msm8226
 
 # Legacy BLOB Support
 TARGET_LD_SHIM_LIBS += \
@@ -68,12 +82,13 @@ TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
     /system/vendor/bin/hw/rild=27
 
 # Partitions
-BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_BOOTIMAGE_PARTITION_SIZE := 10485760
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
-BOARD_CACHEIMAGE_PARTITION_SIZE := 721420288
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2097152000
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 12562611200
+BOARD_FLASH_BLOCK_SIZE             := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_CACHEIMAGE_PARTITION_SIZE    := 132075520
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1610612736
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 12949896704
+TARGET_USERIMAGES_USE_EXT4         := true
 
 # Power HAL
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power/power_ext.c
