@@ -26,13 +26,15 @@ ro.qualcomm.bt.hci_transport=smd
 camera2.portability.force_api=1
 
 # Display
-ro.sf.lcd_density=320
+# XMSX adapt to origin config
+ro.sf.lcd_density=240
 
 # GPS
 persist.gps.qc_nlp_in_use=0
 ro.gps.agps_provider=1
 ro.qc.sdk.izat.premium_enabled=0
-ro.qc.sdk.izat.service_mask=0x0
+# XMSX adapt to origin config
+ro.qc.sdk.izat.service_mask=0x5
 
 # HDMI
 ro.hdmi.enable=true
@@ -57,7 +59,8 @@ media.stagefright.enable-scan=true
 mmp.enable.3g2=true
 #37491 is decimal sum of supported codecs in AAL
 #codecs: AVI AC3 ASF AAC QCP DTS 3G2 MP2TS
-mm.enable.qcom_parser=37491
+# XMSX adapt to origin config
+mm.enable.qcom_parser=37475
 
 # Memory optimizations
 ro.vendor.qti.am.reschedule_service=true
