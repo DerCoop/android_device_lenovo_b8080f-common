@@ -69,7 +69,7 @@ BOARD_MKBOOTIMG_ARGS      := --kernel_offset 0x00008000 \
 #BOARD_MKBOOTIMG_ARGS      := --ramdisk_offset 0x02000000 \
 #                             --tags_offset 0x1e00000
 BOARD_CUSTOM_BOOTIMG      := true
-BOARD_CUSTOM_BOOTIMG_MK   := hardware/lenovo/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK   := hardware/lenovo/b8080f/mkbootimg.mk
 BOARD_RAMDISK_USE_XZ      := true
 TARGET_KERNEL_SOURCE      := kernel/lenovo/msm8226
 
